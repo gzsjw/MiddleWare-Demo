@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<context:property-placeholder location="classpath:/application-dev.properties"
+		system-properties-mode="OVERRIDE" />
+
+	<import resource="mvc-view-config.xml" />
+
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven />
+
+	<!-- 自动搜索@Controller标注的类 -->
+	<context:component-scan base-package="org.mw.demo.controller" />
+
+	<!-- all resources inside folder src/main/webapp/resources are mapped so 
+		they can be refered -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
+	<!-- serve static resources (*.html, ...) from src/main/webapp/ Required 
+		when both servlet-mapping is '/' and static resources need to be served -->
+	<mvc:default-servlet-handler />
+
+	<!-- - Message source for this context, loaded from localized "messages_xx" 
+		files. - Files are stored inside src/main/resources -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource"
+		p:basename="messages/messages" />
+
+	<!-- Standard implementation of the {@link MultipartResolver} interface -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
+
+</beans>  
