@@ -18,27 +18,6 @@ default-storage-engine=INNODB
 2、SHOW VARIABLES LIKE '%char%'
 
 3、建库建表
-CREATE DATABASE rf_ffp CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
+CREATE DATABASE mw_demo CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
 
-use rf_ffp;
-
-create table taskexe (
-	id integer not null auto_increment,
-	taskno varchar(30),
-	taskname varchar(50),
-	requestmap varchar(100),
-	execlass varchar(100),
-	exetimes integer,
-	exelastdatetime datetime,
-	primary key(id)
-);
-
-create table tasklog (
-	id integer not null auto_increment,
-	taskid integer,
-	exedatetime datetime,
-	timeconsume decimal(10,3),
-	result varchar(100),
-	log varchar(500),
-	primary key(id)
-);
+use mw_demo;

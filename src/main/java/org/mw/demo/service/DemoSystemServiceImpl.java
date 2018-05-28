@@ -28,7 +28,7 @@ public class DemoSystemServiceImpl implements SystemManageService {
 			auser.setUserCode("0" + i);
 			auser.setUserName("user0" + i);
 			auser.setUserPWD("0" + i);
-			auser.setAvatar("/useravatar/" + PubConst.SYSTEM_DEMO + "/0" + i + ".jpg");
+			auser.setAvatar("/useravatar/" + PubConst.SYSTEM_DEMO + "/" + auser.getUserId() + ".jpeg");
 			userList.add(auser);
 		}
 		return userList.toArray(new User[0]);
@@ -38,7 +38,7 @@ public class DemoSystemServiceImpl implements SystemManageService {
 	private static String[] defaultFuncNodes = { "FuncNode01", "FuncNode02", "FuncNode03", "FuncNode04" };
 
 	@Override
-	@Transactional
+//	@Transactional
 	public LoginResponse login(LoginRequest loginRequest) {
 		// 测试用例按userCode生成模拟数据
 		String userCode = loginRequest.getUserCode();

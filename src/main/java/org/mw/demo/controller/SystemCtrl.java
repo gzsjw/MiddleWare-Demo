@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class SystemCtrl {
 	protected static final Logger LOG = LoggerFactory.getLogger(SystemCtrl.class);
 
-	@Value(value = "${nc63.rfffp_baseurl}")
-	private String nc63_rfffp_baseurl;
+	@Value(value = "${nc63.baseurl}")
+	private String nc63_baseurl;
 
 	@Value(value = "${nc.busiCenterCode}")
 	private String nc_busiCenterCode;

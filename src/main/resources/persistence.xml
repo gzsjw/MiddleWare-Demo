@@ -12,7 +12,7 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:property-placeholder location="classpath:/application-dev.properties" system-properties-mode="OVERRIDE"/>
-
+<!-- 演示系统，使用模拟数据，不需要连接实际数据库
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="${db.driver}" />
 		<property name="url" value="${db.url}" />
@@ -40,5 +40,5 @@
 
 	 <tx:annotation-driven transaction-manager="transactionManager"/> 
 	 <context:component-scan base-package="org.mw.demo.jpa"/> 
-
+ -->
 </beans>
