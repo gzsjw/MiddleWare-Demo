@@ -1,0 +1,17 @@
+## 迭代版本
+
+-------------
+### 版本 20180529-01
+
+#### 特性
+见LightWeight-Demo的版本说明
+
+#### 技术栈
+- spring restful
+- hibernate jpa
+- mysql connectionpool cache
+- tomcat servlet
+
+#### 相关项目
+LightWeight-Demo
+-------------
